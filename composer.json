@@ -1,0 +1,35 @@
+{
+    "name": "devapexbr/laravel-breadcrumbs",
+    "description": "Laravel Breadcrumbs",
+    "require": {
+        "php": ">=7",
+        "laravel/framework": ">=5.8"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Renalcio Carlos",
+            "email": "carlos@devapex.com.br",
+            "homepage": "http://devapex.com.br",
+            "role": "Co-founder & Developer"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DevApex\\Breadcrumbs\\LaravelBreadcrumbsServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "DevApex\\Breadcrumbs\\": "src"
+        }
+    }
+}
