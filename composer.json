@@ -1,5 +1,5 @@
 {
-    "name": "devapexbr/laravel-breadcrumbs",
+    "name": "renalcio/laravel-breadcrumbs",
     "description": "Laravel Breadcrumbs",
     "require": {
         "php": ">=7",
@@ -9,8 +9,8 @@
     "authors": [
         {
             "name": "Renalcio Carlos",
-            "email": "carlos@devapex.com.br",
-            "homepage": "http://devapex.com.br",
+            "email": "renalcio.c@gmail.com",
+            "homepage": "https://github.com/renalcio",
             "role": "Co-founder & Developer"
         }
     ],
