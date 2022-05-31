@@ -22,8 +22,10 @@ class Manager
 {
     use Macroable;
 
-    protected $bag;
-    protected $bagDefaults;
+    protected             $bag;
+    protected             $bagDefaults;
+    protected ViewFactory $viewFactory;
+    protected bool $ignoreDefaults = false;
 
     public function __construct(ViewFactory $viewFactory)
     {
@@ -32,23 +34,29 @@ class Manager
         $this->bagDefaults = new BreadcrumbsBag();
     }
 
-    public function make($title, $url = null, $ignore_defaults = false){
+    public function make($title, $url = null, $ignore_defaults = false): BreadcrumbsBag
+    {
+        $this->ignoreDefaults = $ignore_defaults;
 
-        if(!$ignore_defaults){
+       /* if(!$ignore_defaults){
             $this->bag->itens = $this->bagDefaults->itens;
-        }
+        }*/
 
         $this->bag->add($title, $url);
         return $this->bag;
     }
 
-    public function defaults($title, $url = null){
+    public function defaults($title, $url = null): BreadcrumbsBag
+    {
         $this->bagDefaults = new BreadcrumbsBag();
         $this->bagDefaults->add($title, $url);
         return $this->bagDefaults;
     }
 
     public function bag(){
+        if(!$this->ignoreDefaults){
+            $this->bag->itens = $this->bagDefaults->itens->merge($this->bag->itens);
+        }
         return $this->bag;
     }
 
@@ -82,6 +90,9 @@ class Manager
     public function render(): View
     {
         $view = config('breadcrumbs.view');
+        if(!$this->ignoreDefaults){
+            $this->bag->itens = $this->bagDefaults->itens->merge($this->bag->itens);
+        }
 
         $breadcrumbs = $this;
 

@@ -4,6 +4,7 @@
  */
 ?>
 @unless ($isEmpty ?? false)
+    @section('title', $breadcrumbs->itens->last()->title)
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb {{ $breadcrumbs->list_class }}">
             @foreach ($breadcrumbs->itens as $breadcrumb)

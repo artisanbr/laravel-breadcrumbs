@@ -21,17 +21,20 @@ class BreadcrumbsBag
         $this->itens = new Collection;
     }
 
-    public function parent($title, $url = null){
+    public function parent($title, $url = null): static
+    {
         $this->add($title, $url);
         return $this;
     }
 
-    public function add($title, $url = null){
+    public function add($title, $url = null): static
+    {
         $this->itens->push(new BreadcrumbsItem($title, $url));
         return $this;
     }
 
-    public function beforeOf($title, $url = null){
+    public function beforeOf($title, $url = null): static
+    {
         $this->itens->prepend(new BreadcrumbsItem($title, $url));
         return $this;
     }
