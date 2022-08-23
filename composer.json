@@ -24,7 +24,7 @@
             ]
         },
         "branch-alias": {
-            "dev-master": "master"
+            "dev-main": "1.x-dev"
         }
     },
     "autoload": {
