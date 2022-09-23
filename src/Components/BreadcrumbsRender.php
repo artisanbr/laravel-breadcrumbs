@@ -10,7 +10,7 @@ class BreadcrumbsRender extends Component
 
     public function render()
     {
-        $breadcrumbs = Breadcrumbs::bag();
+        $breadcrumbs = Breadcrumbs::renderBag();
         $isEmpty = Breadcrumbs::isEmpty();
         return view(config('breadcrumbs.view'), compact('breadcrumbs', 'isEmpty'));
     }

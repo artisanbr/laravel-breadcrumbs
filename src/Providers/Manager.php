@@ -38,12 +38,8 @@ class Manager
     {
         $this->ignoreDefaults = $ignore_defaults;
 
-       /* if(!$ignore_defaults){
-            $this->bag->itens = $this->bagDefaults->itens;
-        }*/
-
         $this->bag->add($title, $url);
-        return $this->bag;
+        return $this->bag();
     }
 
     public function defaults($title, $url = null): BreadcrumbsBag
@@ -53,11 +49,29 @@ class Manager
         return $this->bagDefaults;
     }
 
+    public function defaultParent($title, $url = null){
+        return $this->defaultsBag()->parent($title, $url);
+    }
+
+    public function defaultAdd($title, $url = null){
+        return $this->defaultsBag()->add($title, $url);
+    }
+
+    public function defaultsBag(): BreadcrumbsBag
+    {
+        return $this->bagDefaults;
+    }
+
     public function bag(){
-        if(!$this->ignoreDefaults){
-            $this->bag->itens = $this->bagDefaults->itens->merge($this->bag->itens);
-        }
         return $this->bag;
+    }
+
+    public function add($title, $url = null){
+        return $this->bag()->add($title, $url);
+    }
+
+    public function parent($title, $url = null){
+        return $this->bag()->parent($title, $url);
     }
 
     public function list_class($class){
@@ -80,22 +94,30 @@ class Manager
         return !$this->bag || !$this->bag->itens->count();
     }
 
-    /**
-     * Render breadcrumbs for a page with the default view.
-     *
-     * @param string|null $name The name of the current page.
-     * @param mixed ...$params The parameters to pass to the closure for the current page.
-     * @return \Illuminate\Contracts\View\View The generated view.
-     */
+
+    public function renderBag(): BreadcrumbsBag
+    {
+        $bag = new BreadcrumbsBag();
+
+        if(!$this->ignoreDefaults){
+            $bag->itens = $this->bagDefaults->itens->merge($this->bag->itens);
+        }else{
+            $bag->itens = $this->bag->itens;
+        }
+
+        return $bag;
+    }
+
     public function render(): View
     {
         $view = config('breadcrumbs.view');
-        if(!$this->ignoreDefaults){
-            $this->bag->itens = $this->bagDefaults->itens->merge($this->bag->itens);
-        }
+
 
         $breadcrumbs = $this;
+        $breadcrumbs->bag = $this->renderBag();
 
         return $this->viewFactory->make($view, compact('breadcrumbs'));
     }
+
+
 }

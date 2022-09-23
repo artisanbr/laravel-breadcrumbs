@@ -23,7 +23,7 @@ class BreadcrumbsBag
 
     public function parent($title, $url = null): static
     {
-        $this->add($title, $url);
+        $this->beforeOf($title, $url);
         return $this;
     }
 
