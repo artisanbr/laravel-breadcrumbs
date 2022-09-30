@@ -1,5 +1,5 @@
 {
-    "name": "renalcio/laravel-breadcrumbs",
+    "name": "artisan-labs/laravel-breadcrumbs",
     "description": "Laravel Breadcrumbs",
     "require": {
         "php": ">=7",
