@@ -1,6 +1,6 @@
 <?php
 
-namespace DevApex\Breadcrumbs\Providers;
+namespace ArtisanLabs\Breadcrumbs\Providers;
 
 use Illuminate\Support\Facades\Facade;
 

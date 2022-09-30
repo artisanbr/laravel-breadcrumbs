@@ -1,14 +1,14 @@
 <?php
 
-namespace DevApex\Breadcrumbs\Providers;
+namespace ArtisanLabs\Breadcrumbs\Providers;
 
 /*use Diglactic\Breadcrumbs\Exceptions\DuplicateBreadcrumbException;
 use Diglactic\Breadcrumbs\Exceptions\InvalidBreadcrumbException;
 use Diglactic\Breadcrumbs\Exceptions\UnnamedRouteException;
 use Diglactic\Breadcrumbs\Exceptions\ViewNotSetException;*/
 
-use DevApex\Breadcrumbs\Models\BreadcrumbsItem;
-use DevApex\Breadcrumbs\Models\BreadcrumbsBag;
+use ArtisanLabs\Breadcrumbs\Models\BreadcrumbsItem;
+use ArtisanLabs\Breadcrumbs\Models\BreadcrumbsBag;
 use Illuminate\Contracts\View\Factory as ViewFactory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Router;

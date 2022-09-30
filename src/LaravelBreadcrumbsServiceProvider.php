@@ -1,10 +1,10 @@
 <?php
 
-namespace DevApex\Breadcrumbs;
+namespace ArtisanLabs\Breadcrumbs;
 
-use DevApex\Breadcrumbs\Providers\Generator;
-use DevApex\Breadcrumbs\Providers\Manager;
-use DevApex\Breadcrumbs\Components\BreadcrumbsRender;
+use ArtisanLabs\Breadcrumbs\Providers\Generator;
+use ArtisanLabs\Breadcrumbs\Providers\Manager;
+use ArtisanLabs\Breadcrumbs\Components\BreadcrumbsRender;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;

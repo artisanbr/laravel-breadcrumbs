@@ -1,6 +1,6 @@
 <?php
 
-namespace DevApex\Breadcrumbs\Models;
+namespace ArtisanLabs\Breadcrumbs\Models;
 
 use Illuminate\Support\Collection;
 

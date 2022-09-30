@@ -1,8 +1,8 @@
 <?php
 
-namespace DevApex\Breadcrumbs\Components;
+namespace ArtisanLabs\Breadcrumbs\Components;
 
-use DevApex\Breadcrumbs\Providers\Breadcrumbs;
+use ArtisanLabs\Breadcrumbs\Providers\Breadcrumbs;
 use Illuminate\View\Component;
 
 class BreadcrumbsRender extends Component

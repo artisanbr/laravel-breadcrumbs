@@ -20,7 +20,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "DevApex\\Breadcrumbs\\LaravelBreadcrumbsServiceProvider"
+                "ArtisanLabs\\Breadcrumbs\\LaravelBreadcrumbsServiceProvider"
             ]
         },
         "branch-alias": {
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "DevApex\\Breadcrumbs\\": "src"
+            "ArtisanLabs\\Breadcrumbs\\": "src"
         }
     }
 }

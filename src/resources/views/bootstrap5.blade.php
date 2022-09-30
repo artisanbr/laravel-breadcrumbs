@@ -1,6 +1,6 @@
 <?php
 /**
- * @var \DevApex\Breadcrumbs\Models\BreadcrumbsBag $breadcrumbs
+ * @var \ArtisanLabs\Breadcrumbs\Models\BreadcrumbsBag $breadcrumbs
  */
 ?>
 @unless ($isEmpty ?? false)

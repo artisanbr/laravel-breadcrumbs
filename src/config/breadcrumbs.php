@@ -42,7 +42,7 @@ return [
     */
 
     // Manager
-    'manager-class' => DevApex\Breadcrumbs\Providers\Manager::class,
+    'manager-class' => ArtisanLabs\Breadcrumbs\Providers\Manager::class,
 
 
 ];
