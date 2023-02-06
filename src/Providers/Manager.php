@@ -34,11 +34,14 @@ class Manager
         $this->bagDefaults = new BreadcrumbsBag();
     }
 
-    public function make($title, $url = null, $ignore_defaults = false): BreadcrumbsBag
+    public function make($title = null, $url = null, $ignore_defaults = false): BreadcrumbsBag
     {
         $this->ignoreDefaults = $ignore_defaults;
 
-        $this->bag->add($title, $url);
+        if($title){
+            $this->bag->add($title, $url);
+        }
+
         return $this->bag();
     }
 
