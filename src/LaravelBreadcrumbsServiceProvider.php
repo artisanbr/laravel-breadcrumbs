@@ -68,7 +68,7 @@ class LaravelBreadcrumbsServiceProvider extends ServiceProvider
                 BreadcrumbsRender::class,
             ]);
 
-            //Blade::component('breadcrumbs', BreadcrumbsRender::class);
+            Blade::component('breadcrumbs', BreadcrumbsRender::class);
 
             $this->publishes([
                 $this->views_path => resource_path('views/vendor/breadcrumbs'),
